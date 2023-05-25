@@ -38,12 +38,21 @@ def run_app_ml():
 
         price = round(y_pred[0])
 
+        
+
         print(str(price)+'달러짜리 차량 구매 가능합니다.')
         print(f'{price}달러짜리 차량 구매 가능합니다.')
         print('{}달러짜리 차량 구매 가능합니다.'.format(price))
+        if price <0:
+            st.error('예측이 불가능합니다.')
+        else:
+            st.success(f'{price}$ 차량 구매 가능합니다.')
 
-        st.text(f'{price}달러짜리 차량 구매 가능합니다.')
+
+        # st.text(f'{price}달러짜리 차량 구매 가능합니다.')
         # st.subheader(f'{price}달러짜리 차량 구매 가능합니다.')
+       
+
 
 
 
